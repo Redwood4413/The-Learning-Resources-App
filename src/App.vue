@@ -1,9 +1,11 @@
 <script lang="ts">
-import ResourceCard from './components/ResourceCard.vue';
+import TheHeader from './components/layouts/TheHeader.vue';
+import ResourcesList from './components/learning-resources/ResourcesList.vue';
 
 export default {
   components: {
-    ResourceCard,
+    ResourcesList,
+    TheHeader,
   },
   data() {
     return {
@@ -20,6 +22,12 @@ export default {
           description: 'Learn to google...',
           link: 'https://google.com',
         },
+        {
+          id: 'stackoverflow',
+          title: 'Stackoverflow',
+          description: 'Stackoverflow helps you find an answers for your questions.',
+          link: 'https://stackoverflow.com/',
+        },
       ],
     };
   },
@@ -27,12 +35,6 @@ export default {
 </script>
 
 <template>
-  <ul v-for="resource in storedResources" :key="resource.id">
-    <ResourceCard
-      :id="resource.id"
-      :title="resource.title"
-      :description="resource.description"
-      :link="resource.link"
-    />
-  </ul>
+  <TheHeader title="RememberMe" />
+  <ResourcesList :resources="storedResources" />
 </template>

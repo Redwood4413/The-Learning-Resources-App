@@ -1,5 +1,10 @@
 <script lang="ts">
+import closeIcon from '../Icons/closeIcon.vue';
+
 export default {
+  components: {
+    closeIcon,
+  },
   props: {
     id: {
       type: String,
@@ -22,36 +27,42 @@ export default {
 </script>
 
 <template>
-  <div class="card">
+  <BaseCard>
+    <button type="button" title="Delete">
+      <closeIcon />
+    </button>
     <h2>{{ title }}</h2>
     <span> {{ description }}</span>
-    <a :href="link">Open</a>
-  </div>
+    <a :href="link" target="_blank" rel="noopener refererrer">Open</a>
+
+  </BaseCard>
 </template>
 
 <style lang="scss" scoped>
     h2{
       margin: 0;
     }
-  .card {
-    box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 1);
-    border-radius: 20px;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    gap:10px;
+
     a {
       background: rgb(14, 14, 14);
       width:100px;
       color:white;
       padding: 5px;
       border-radius: 20px;
+      justify-self: flex-end;
       transition: background 100ms ease-in-out;
       &:hover {
         background: rgb(49, 47, 47);
       }
     }
-  }
+    button {
+      all: unset;
+      cursor: pointer;
+      position: absolute;
+      top:10px;
+      right:10px;
+      width:16px;
+      height:16px;
+      border-radius: 50%;
+    }
 </style>
