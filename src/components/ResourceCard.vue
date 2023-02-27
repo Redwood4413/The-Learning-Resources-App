@@ -40,6 +40,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1em;
     gap:10px;
     a {
       background: rgb(14, 14, 14);
@@ -47,8 +48,9 @@ export default {
       color:white;
       padding: 5px;
       border-radius: 20px;
+      transition: background 100ms ease-in-out;
       &:hover {
-        background: rgb(60, 57, 57);
+        background: rgb(49, 47, 47);
       }
     }
   }

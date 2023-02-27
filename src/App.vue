@@ -28,6 +28,11 @@ export default {
 
 <template>
   <ul v-for="resource in storedResources" :key="resource.id">
-    <ResourceCard :id="resource.id" :title="resource.title" :description="resource.description" :link="resource.link" />
+    <ResourceCard
+      :id="resource.id"
+      :title="resource.title"
+      :description="resource.description"
+      :link="resource.link"
+    />
   </ul>
 </template>
