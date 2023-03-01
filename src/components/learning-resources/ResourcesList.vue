@@ -5,7 +5,11 @@ export default {
   components: {
     ResourceCard,
   },
-  props: ['resources'],
+  name: 'ResourcesList',
+  inject: ['resources'],
+  methods: {
+
+  },
 };
 </script>
 
@@ -23,11 +27,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.card-wrapper {
+ .card-wrapper {
+  margin-top: 20px;
   display:grid;
-  //width: 70vw;
-  padding: 0 10%;
+  text-align: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap:20px;
-}
-</style>
+}</style>

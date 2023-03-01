@@ -28,13 +28,11 @@ export default {
 
 <template>
   <BaseCard>
-    <button type="button" title="Delete">
-      <closeIcon />
-    </button>
+
     <h2>{{ title }}</h2>
     <span> {{ description }}</span>
     <a :href="link" target="_blank" rel="noopener refererrer">Open</a>
-
+    <BaseButton>Delete</BaseButton>
   </BaseCard>
 </template>
 
@@ -55,14 +53,5 @@ export default {
         background: rgb(49, 47, 47);
       }
     }
-    button {
-      all: unset;
-      cursor: pointer;
-      position: absolute;
-      top:10px;
-      right:10px;
-      width:16px;
-      height:16px;
-      border-radius: 50%;
-    }
+
 </style>
